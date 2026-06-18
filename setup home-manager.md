@@ -27,5 +27,8 @@ sudo nix-channel --list
 ```
 You'll get output like this, In this case both are stable channel
 
+
 `home-manager https://github.com/nix-community/home-manager/archive/release-26.05.tar.gz`
+
 `nixos https://channels.nixos.org/nixos-26.05`
+
