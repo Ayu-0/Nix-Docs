@@ -5,13 +5,17 @@
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 ```
+**Run this command to initialize the configuration:**
+```
+nix-shell '<home-manager>' -A install
+```
 
-**Explicitly enable Home Manager to manage itself**
+**Still not worked? Explicitly enable home-manager**
 `
 programs.home-manager.enable = true;
 `
 
-**Run the activation command**
+**Run the activation command, Again**
 ```
 nix-shell '<home-manager>' -A install
 ```
