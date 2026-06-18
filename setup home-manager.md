@@ -1,4 +1,4 @@
-# This workaround for setting up home-manager in nixos
+### This workaround for setting up home-manager in nixos
 
 **Add home-manager channel**
 ```
