@@ -42,7 +42,10 @@ When you run firefox, your system goes through the shortcut and executes the rea
 | Different machines may drift over time    | Systems stay reproducible from the same config      |
 
 
-FHS ?
-How it works? manage the package and libraries?
 
-Managing services and otehr stuff in configuration.nix, adding multiples modules how?
+Because every package installation creates a brand-new folder, you might worry about running out of disk space.When you upgrade a package, NixOS doesn't delete the old folder immediately—it just changes the symlinks to point to the new folder. The old folder remains in the store so you can rollback instantly if needed
+To delete old pacakge just 
+```
+nix-collect-garbage -d
+```
+
