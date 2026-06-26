@@ -27,7 +27,7 @@ Because the program never looks outside its assigned /nix/store paths, it is com
 
 **If everything is locked away in its own isolated /nix/store folder, how does your terminal find them when you type a command?**
 
-NixOS solves this by using symlinks (shortcuts) to dynamically build a temporary directory structure called a profile [1]. When you log in, NixOS generates a custom folder
+NixOS solves this by using symlinks (shortcuts) to dynamically build a temporary directory structure called a profile. When you log in, NixOS generates a custom folder
 for your user that aggregates all your active programs into a clean layout. NixOS then simply points your system's $PATH environment variable to this ~/.nix-profile/bin/ folder.
 When you run firefox, your system goes through the shortcut and executes the real binary hiding inside the store
 
