@@ -73,8 +73,8 @@ sudo nixos-rebuild boot  # sets the changes to apply only after the next system 
 
 As you understand, this is system wide installation, you don't want everytime & everything to install this way, to fix this is issue there is stuff called `home-manager` which lets you install packages to user specific.
 
-> OK, what if you want to install packages temp : You can use `nix-shell` for this
-> What if you want to set only specific packages, dependencies to your work env : use `nix develop`
-> What if you want to install package that is not in nix package? : use `nix flakes`
+> * OK, what if you want to install packages temp : You can use `nix-shell` for this
+> * What if you want to set only specific packages, dependencies to your work env : use `nix develop`
+> * What if you want to install package that is not in nix package? : use `nix flakes`
 
 I'll write separate docs for this...
