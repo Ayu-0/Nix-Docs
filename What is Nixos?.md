@@ -11,12 +11,13 @@ Now you get an idea where it store all the packages, but how it manage so many &
 * Every configuration flag enabled
 * All specific library dependencies required
   
-> If you change even a single character in a configuration, the hash changes. This allows completely different versions of the same package to live in /nix/store side-by-side without overlapping.
-
+If you change even a single character in a configuration, the hash changes. This allows completely different versions of the same package to live in /nix/store side-by-side without overlapping.
 When NixOS compiles a program, it modifies the executable so that it looks only inside the specific /nix/store folders it needs. In traditional Linux,
 a program looks for libc.so globally in /lib. In NixOS, the executable contains a hardcoded path directly to its exact dependency:
 `LOOK_FOR_LIBRARY = /nix/store/h93...-glibc-2.37/lib/libc.so`
 Because the program never looks outside its assigned /nix/store paths, it is completely self-contained and immune to global system updates 
+
+Everytime you make a changes to your system, all previous versions of your system are saved. If you break your system trying something, you can restart the machine, choose then previous version in grub and back again... yooo, cool hn...
 
 
 #### If everything is locked away in its own isolated /nix/store folder, how does your terminal find them when you type a command?
