@@ -61,8 +61,20 @@ Got it... Lets understand configuration then;
 }
 ```
 
-As you understand this is system wide installation, you don't want everytime & everything to install this way, to fix this is issue there is stuff called `home-manager` which lets you install packages user specific.
+**After defining your sytem, run following to build the system**
+```
+sudo nixos-rebuild switch  # Applies changes immediately to your running system
+sudo nixos-rebuild boot  # sets the changes to apply only after the next system restart 
+```
+> [!NOTE]
+> `sudo nixos-rebuild switch --upgrade` : It forcefully updates your root nix-channel to the absolute latest commit available upstream. It updates your underlying package sources first, then builds the system, Because the channel updates to a brand new commit instantly, you ran into a classic Nix timing problem: you got ahead of the binary cache, Since Nix couldn't find precompiled binaries on cache.nixos.org for that exact hourly commit, it fallback to building packages locally on your machine. The official Nix build servers (Hydra) take a few hours to compile everything every time a new change is pushed to the repository.
 
-OK what if you want to only install packages temp
-What if you want to set only specific packages, dependencies to your work env
-What if you want to install package this is not in nix package? use nix flakes
+&nbsp;
+
+As you understand, this is system wide installation, you don't want everytime & everything to install this way, to fix this is issue there is stuff called `home-manager` which lets you install packages to user specific.
+
+> OK, what if you want to install packages temp : You can use `nix-shell` for this
+> What if you want to set only specific packages, dependencies to your work env : use `nix develop`
+> What if you want to install package that is not in nix package? : use `nix flakes`
+
+I'll write separate docs for this...
