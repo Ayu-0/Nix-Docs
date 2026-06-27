@@ -1,7 +1,6 @@
-## Nix-Flakes : What is this & How to enable
+## Nix-Flakes : What is this?
 
-If you want to install a package that is not in official nix channels, then Nix-Flakes is the tool you need, It makes easy to pull from any git repo, source code or
-third-party flake.
+Nix Flakes is the modern, standardized packaging and configuration system. It replaces the traditional channels system by strictly defining dependencies (inputs) and generating a flake.lock file, which guarantees that your system builds identically across different machines
 
 To use flakes, you need to create the file flake.nix, which will be the basis of everything. but first you have to enable it via configuration.nix file
  `nix.settings.experimental-features = [ "nix-command" "flakes" ];`
